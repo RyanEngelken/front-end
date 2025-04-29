@@ -2,7 +2,7 @@ addEventListener("DOMContentLoaded", async function() {
     document.querySelector("#updateBtn").addEventListener("click", updateSong)
     const urlparam = new URLSearchParams(window.location.search)
     const SongID = urlparam.get('id')
-    const response = await fetch(`https://traveling-oceanic-twister.glitch.me/api/songs` + SongID)
+    const response = await fetch(`http://localhost:3000/api/songs/` + SongID)
     if(response.ok){
         let song = await response.json()
         document.querySelector("#songId").value = song._id
