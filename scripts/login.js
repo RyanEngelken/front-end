@@ -33,7 +33,7 @@ async function login(username, password){
         localStorage.setItem("uname", uname)
         localStorage.setItem("auth", auth)
         //redirect
-        window.location.replace("/index.html")
+        window.location.replace("/front-end/login.html");
     }   
     else {
         document.querySelector("errorMsg").innerHTML = "Invalid username or password"
