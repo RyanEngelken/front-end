@@ -11,10 +11,11 @@ async function addSong() {
         artist: document.querySelector("#artist").value,
         releaseDate: document.querySelector("#released").value,
         popularity: document.querySelector("#popularity").value,
-        genre: document.querySelector("#genre").value ? document.querySelector("#genre").value.split(",") : []
+        genre: document.querySelector("#genre").value ? document.querySelector("#genre").value.split(",") : [],
+        username: localStorage.getItem("uname")
     }
 
-    const response = await fetch("https://traveling-oceanic-twister.glitch.me/api/songs", {
+    const response = await fetch(`http://localhost:3000/api/songs/`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
